@@ -15,9 +15,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
+          name: "install dependencies"
+          command: python3 -m venv venv
+                    .venv/bin/activate
+                   pip install -r requirements.txt
+      - run:
+          name: "run tests" 
+          command:  .venv/bin/activate
+                    pytest -v --cov=calculator
+    
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
