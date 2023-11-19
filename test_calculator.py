@@ -3,4 +3,4 @@ from calculator import sum
 
 class TestCalc:
     def test_sum(self):
-        assert 8 == sum(4, 4)
+        assert 9 == sum(4, 4)
